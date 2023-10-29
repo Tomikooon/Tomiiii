@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div class="container-fluid">
+		<table class="table">
+			<thead>
+				<tr>
+					<th width="5%">#</th>
+					<th width="5%">id</th>
+					<th width="20%">name</th>
+					<th width="45%">address</th>
+					<th>action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% if contacts %}
+					{% for c in contacts %}
+						<tr>
+							<td>{{ loop.index }}</td>
+							<td>{{ c.id }}</td>
+							<td>{{ c.name }}</td>
+							<td>{{ c.address }}</td>
+							<td>
+								<a class="btn btn-info" href="{{ url_for('show', id=c.id) }}">show</a>
+								<a class="btn btn-success" href="{{ url_for('update', id=c.id) }}">update</a>
+								<a class="btn btn-danger" href="{{ url_for('delete', id=c.id) }}">delete</a>
+							</td>
+						</tr>
+					{% endfor %}
+				{% endif %}
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<a class="btn btn-primary" href="{{ url_for('home') }}">back</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div class="container-fluid">
+		<table class="table">
+			<tr>
+				<td width="20%">name</td>
+				<td width="5%">:</td>
+				<td>{{ contact.name }}</td>
+			</tr>
+			<tr>
+				<td>address</td>
+				<td>:</td>
+				<td>{{ contact.address }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<a class="btn btn-warning" href="{{ url_for('browse') }}">back</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div class="container-fluid">
+		<form method="post" action="">
+			<input type="hidden" name="id" value="{{ contact.id }}">
+
+			<table class="table">
+				<tr>
+					<td width="20%">name</td>
+					<td width="5%">:</td>
+					<td>{{ contact.name }}</td>
+				</tr>
+				<tr>
+					<td>address</td>
+					<td>:</td>
+					<td>{{ contact.address }}</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input class="btn btn-danger" type="submit" value="delete">
+						<a href="{{ url_for('browse') }}" class="btn btn-warning">browse</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+{% endblock %}
